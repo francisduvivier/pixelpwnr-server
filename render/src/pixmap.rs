@@ -1,4 +1,6 @@
 use std::sync::atomic::{AtomicU32, Ordering};
+use std::thread::sleep;
+use std::time::Duration;
 
 use crate::color::Color;
 
@@ -120,6 +122,7 @@ impl Pixmap {
     /// This data may be used to send to the GPU, as raw texture buffer, for
     /// rendering.
     pub fn as_bytes<'me>(&'me mut self) -> &[u8] {
+        sleep(Duration::from_millis(100));
         let map = &self.map;
 
         let len = map.len() * 4;

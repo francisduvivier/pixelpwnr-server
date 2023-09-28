@@ -179,7 +179,7 @@ impl StatReporter {
     /// Report the stats to the screen.
     fn report_screen(stats: &Arc<Stats>, screen: &Arc<Mutex<String>>) {
         *screen.lock() = format!(
-            "CONNECT WITH:        \tpx:\t{}\t{}\tclients: {}\ntelnet localhost 1234        \tin:\t{}\t{}",
+            "PixelFlut: HACK THE PIXELS on the screen! CONNECT WITH:        \tpx:\t{}\t{}\tclients: {}\ntelnet 10.66.66.100 10108        \nExample Command: PX 100 100 00FF00\tin:\t{}\t{}",
             stats.pixels_human(),
             stats.pixels_sec_human(),
             stats.clients(),
